@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+.background {
+  background-image: url("/blob-scene-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust as needed */
+  /* Add other background properties like position, etc. */
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.opening-animation {
+  animation: animate 2s forwards;
+}
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Style for WebKit browsers */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Style for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #273c70bf;
+  border-radius: 99px;
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: rgba(203, 203, 203, 0.407); /* Track background color */
+  /* border: 1px solid #8d8888;  */
+  border-radius: 99px;
+}
+
+/* Hide the scrollbar buttons */
+::-webkit-scrollbar-button {
+  display: none;
+}
